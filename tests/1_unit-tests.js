@@ -30,14 +30,14 @@ suite('Unit Tests', function () {
 
   // -----------------------------------------------------------------------------
 
-  // suite('Equality', function () {
+  suite('Equality', function () {
   //   // #5
-  //   test('#equal, #notEqual', function () {
-  //     assert.equal(12, '12', 'Numbers are coerced into strings with ==');
-  //     assert.notEqual({ value: 1 }, { value: 1 }, '== compares object references');
-  //     assert.equal(6 * '2', '12');
-  //     assert.notEqual(6 + '2', '12');
-  //   });
+    test('#equal, #notEqual', function () {
+      assert.equal(12, '12', 'Numbers are coerced into strings with ==');
+      assert.notEqual({ value: 1 }, { value: 1 }, '== compares object references');
+      assert.equal(6 * '2', '12');
+      assert.notEqual(6 + '2', '12');
+    });
   //   // #6
   //   test('#strictEqual, #notStrictEqual', function () {
   //     assert.notStrictEqual(6, '6');
@@ -162,7 +162,7 @@ suite('Unit Tests', function () {
   //     assert.fail(airlinePlane, Object);
   //     assert.fail(myCar.wheels, String);
   //   });
-  // });
+  });
 
   // -----------------------------------------------------------------------------
 });
