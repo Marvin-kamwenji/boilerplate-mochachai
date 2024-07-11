@@ -46,11 +46,11 @@ suite('Unit Tests', function () {
       assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
     });
     // #7
-  //   test('#deepEqual, #notDeepEqual', function () {
-  //     assert.notDeepEqual({ a: '1', b: 5 }, { b: 5, a: '1' }, "The order of keys doesn't matter");
-  //     assert.notDeepEqual({ a: [5, 6] }, { a: [6, 5] }, 'The order of array elements does matter');
-  //   });
-  // });
+    test('#deepEqual, #notDeepEqual', function () {
+      assert.deepEqual({ a: '1', b: 5 }, { b: 5, a: '1' }, "The order of keys doesn't matter");
+      assert.notDeepEqual({ a: [5, 6] }, { a: [6, 5] }, 'The order of array elements does matter');
+    });
+  });
 
   // -----------------------------------------------------------------------------
 
@@ -162,7 +162,7 @@ suite('Unit Tests', function () {
   //     assert.fail(airlinePlane, Object);
   //     assert.fail(myCar.wheels, String);
   //   });
-  });
+  // });
 
   // -----------------------------------------------------------------------------
 });
