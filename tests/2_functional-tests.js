@@ -33,26 +33,32 @@ suite('Functional Tests', function () {
           done();
         });
     });
-//     // #3
-//     test('Send {surname: "Colombo"}', function (done) {
-//       chai
-//         .request(server)
-//         .keepOpen()
-//         .put('/travellers')
+    // #3
+    test('Send {surname: "Colombo"}', function (done) {
+      chai
+        .request(server)
+        .keepOpen()
+        .put('/travellers')
+        .end(function (err, res) {
+          if (err) {
+            console.error(err);
+            done(err);
+          }
+          assert.equal(res.status, 200);
+          assert.equal(res.type, 'application/json');
+          assert.notEqual(res.body.name, 'Cristoforo');
+          assert.notEqual(res?.body?.surname, 'Colombo');
 
-//         .end(function (err, res) {
-//           assert.fail();
+          done();
+        });
+    });
+    // #4
+    // test('Send {surname: "da Verrazzano"}', function (done) {
+      // assert.fail();
 
-//           done();
-//         });
-//     });
-//     // #4
-//     test('Send {surname: "da Verrazzano"}', function (done) {
-//       assert.fail();
-
-//       done();
-//     });
-//   });
+      // done();
+    // });
+  // });
 // });
 
 // const Browser = require('zombie');
