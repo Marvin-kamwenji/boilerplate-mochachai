@@ -70,33 +70,39 @@ suite('Functional Tests', function () {
       done();
     });
   });
-// });
+});
 
-// const Browser = require('zombie');
-
-// suite('Functional Tests with Zombie.js', function () {
-//   this.timeout(5000);
+const Browser = require('zombie');
+Browser.site= 'https://3000-marvinkamwe-boilerplate-e9zcvo3d99u.ws-eu115.gitpod.io';
 
 
+suite('Functional Tests with Zombie.js', function () {
+  this.timeout(5000);
 
-//   suite('Headless browser', function () {
-//     test('should have a working "site" property', function() {
-//       assert.isNotNull(browser.site);
-//     });
-//   });
+  const browser = new Browser();
 
-//   suite('"Famous Italian Explorers" form', function () {
+  suiteSetup(function(done) {
+    return browser.visit('/', done);
+  });
+
+  suite('Headless browser', function () {
+    test('should have a working "site" property', function() {
+      assert.isNotNull(browser.site);
+    });
+  });
+
+  // suite('"Famous Italian Explorers" form', function () {
 //     // #5
-//     test('Submit the surname "Colombo" in the HTML form', function (done) {
-//       assert.fail();
+    // test('Submit the surname "Colombo" in the HTML form', function (done) {
+      // assert.fail();
 
-//       done();
-//     });
+      // done();
+    // });
 //     // #6
 //     test('Submit the surname "Vespucci" in the HTML form', function (done) {
 //       assert.fail();
 
 //       done();
-//     });
+    // });
   });
 });
