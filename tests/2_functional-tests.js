@@ -39,6 +39,7 @@ suite('Functional Tests', function () {
         .request(server)
         .keepOpen()
         .put('/travellers')
+        .send({ surname: 'Colombo' })
         .end(function (err, res) {
           if (err) {
             console.error(err);
@@ -46,8 +47,8 @@ suite('Functional Tests', function () {
           }
           assert.equal(res.status, 200);
           assert.equal(res.type, 'application/json');
-          assert.notEqual(res.body.name, 'Cristoforo');
-          assert.notEqual(res?.body?.surname, 'Colombo');
+          assert.equal(res.body.name, 'Cristoforo');
+          assert.equal(res.body.surname, 'Colombo');
 
           done();
         });
